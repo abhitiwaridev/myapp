@@ -1,0 +1,27 @@
+
+<%- include("../_nav.ejs") %>
+
+<div class="container">
+<form action="/blogs" method="POST">
+<br>
+<br>
+<h2>Create Blog Page</h2>    
+<br>
+<br>
+<div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="Enter Blog Title" >
+    </div>
+<div class="mb-3">
+    <label for="body" class="form-label">Enter Blog Body</label>
+    <textarea class="form-control" name="body" id="body" rows="3" ></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="body" class="form-label">Enter Blog Snippet(*)</label>
+        <input class="form-control" name="snippet" id="snippetxusy" required rows="3" ></input>
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>

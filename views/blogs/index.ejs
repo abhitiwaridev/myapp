@@ -1,0 +1,52 @@
+
+
+<%- include("../_nav.ejs") %>
+
+<body>
+
+<div class="container">
+  <br>
+  <br>
+  
+  <a class="btn btn-primary" href="/blogs/create" role="button">Create Blog</a>
+  <br>
+  <br>
+    <h2>All Blogs</h2>
+
+    <!-- Table View -->
+    <% if (blogs.length > 0) { %>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+            <th scope="col">Snippet</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+            <% blogs.forEach(i => { %>
+                <tr>
+                <td><a href="/blogs/<%= i._id %>"><%= i.title %></a></td>
+                <td><%= i.body %></td>
+                <td><%= i.snippet %></td>
+                <td><button>delete</button></td>
+                <% }) %>
+            </tr>
+    
+          </tr>
+
+        </tbody>
+      </table>
+      <% } else { %>
+        <p>There are no blogs to display...</p>
+    <% } %>
+
+
+</div>
+
+
+
+</body>
