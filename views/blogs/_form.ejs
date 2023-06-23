@@ -1,0 +1,17 @@
+
+<form action="/blogs" method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Enter Blog Title" value="<%= blog.title %>">
+        </div>
+    <div class="mb-3">
+        <label for="body" class="form-label">Enter Blog Body</label>
+        <input class="form-control" name="body" id="body" rows="3" value="<%= blog.body %>"></input>
+        </div>
+
+        <div class="mb-3">
+            <label for="body" class="form-label">Enter Blog Snippet(*)</label>
+            <input class="form-control" name="snippet" id="snippetxusy" required rows="3" value="<%= blog.snippet %>"></input>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>

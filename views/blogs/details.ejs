@@ -1,8 +1,20 @@
 
+<%- include("../_nav.ejs") %>
+
+<div class="container">
 <h1> <%= title %></h1>
+<br>
+<br>
+<a type="button" class="btn btn-danger" href="/blogs/<%= blog._id %>/delete">Delete</a>
 
-<h2>Title: <%= blog.title %></h2>
-<h2>Snippet: <%= blog.snippet %></h2>
-<h2>Body: <%= blog.body %></h2>
+<br>
+<br>
+<div>Title: <%= blog.title %></div>
+<div>Snippet: <%= blog.snippet %></div>
+<div>Body: <%= blog.body %></div>
 
+<br>
+<br>
 <a href="/blogs">back to blogs</a>
+
+</div>

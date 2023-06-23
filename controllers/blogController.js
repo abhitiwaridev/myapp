@@ -59,7 +59,7 @@ const blog_delete = (req, res) => {
     Blog.deleteOne({_id: recordid})
         .then(result => {
             console.log(result);
-            res.render('blogs', { blog: result, title: 'Blogs' });
+            res.redirect('/blogs');
         })
         .catch(err => {
             console.log(err);
@@ -68,8 +68,28 @@ const blog_delete = (req, res) => {
 
 
 const blog_edit = (req, res) => {
-    
+    let recordid = req.params.id;
+    console.log(recordid);
+    Blog.findById({_id: recordid })
+        .then(result => {
+            console.log(result);
+            res.render('blogs/edit', { blog: result, title: 'Edit Blog detail' });
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
+
+const blog_update = (req, res) => {
+    Blog.findOneAndUpdate({_id: req.params.id},req.body)
+        .then(result => {
+            res.redirect('/blogs');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
 
 
 module.exports = {
@@ -78,7 +98,8 @@ module.exports = {
     blog_insert,
     blog_getfromid,
     blog_delete,
-    blog_edit
+    blog_edit,
+    blog_update
 }
 
 
